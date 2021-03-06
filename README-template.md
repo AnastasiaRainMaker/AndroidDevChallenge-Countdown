@@ -1,15 +1,15 @@
-# Put title of your app here
+# AndroidDevChallenge - Countdown 
 
 <!--- Replace <OWNER> with your Github Username and <REPOSITORY> with the name of your repository. -->
 <!--- You can find both of these in the url bar when you open your repository in github. -->
-![Workflow result](https://github.com/<OWNER>/<REPOSITORY>/workflows/Check/badge.svg)
+![Workflow result](https://github.com/AnastasiaRainMaker/AndroidDevChallenge-Countdown/workflows/Check/badge.svg)
 
 
-## :scroll: Description
+## :scroll: An sample Compose app to start a 10 sec countdown timer
 <!--- Describe your app in one or two sentences -->
 
 
-## :bulb: Motivation and Context
+## :bulb: The motivation is to improve my Compose skills
 <!--- Optionally point readers to interesting parts of your submission. -->
 <!--- What are you especially proud of? -->
 
