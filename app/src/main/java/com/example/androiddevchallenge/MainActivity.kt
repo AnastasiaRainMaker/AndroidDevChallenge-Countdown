@@ -21,25 +21,39 @@ import android.view.WindowManager
 import androidx.activity.compose.setContent
 import androidx.appcompat.app.AppCompatActivity
 import androidx.compose.animation.animateColorAsState
-import androidx.compose.runtime.Composable
-import androidx.compose.ui.tooling.preview.Preview
-import com.example.androiddevchallenge.ui.theme.MyTheme
 import androidx.compose.animation.core.animateFloatAsState
 import androidx.compose.foundation.background
-import androidx.compose.foundation.layout.*
+import androidx.compose.foundation.layout.Arrangement
+import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.Row
+import androidx.compose.foundation.layout.Spacer
+import androidx.compose.foundation.layout.fillMaxHeight
+import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.layout.height
+import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.size
+import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.shape.RoundedCornerShape
-import androidx.compose.material.*
+import androidx.compose.material.Button
+import androidx.compose.material.ButtonDefaults
+import androidx.compose.material.CircularProgressIndicator
+import androidx.compose.material.MaterialTheme
+import androidx.compose.material.ProgressIndicatorDefaults
+import androidx.compose.material.Text
+import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
+import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.unit.dp
-import androidx.compose.runtime.setValue
 import androidx.compose.ui.graphics.Brush
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.TextStyle
+import androidx.compose.ui.tooling.preview.Preview
+import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import com.example.androiddevchallenge.ui.theme.MyTheme
 import com.example.androiddevchallenge.ui.theme.lightBlue
 import com.example.androiddevchallenge.ui.theme.lightPink
 import com.example.androiddevchallenge.ui.theme.lightPurple
@@ -100,7 +114,6 @@ fun MyApp() {
             color = Color.White,
             style = TextStyle(fontSize = 30.sp)
         )
-
     }
     Row(
         horizontalArrangement = Arrangement.Center,
@@ -140,10 +153,10 @@ fun MyApp() {
                 val timer = object : CountDownTimer(timerTime, 1000) {
                     override fun onTick(millisUntilFinished: Long) {
                         timeElapsed = "00h 00m ${
-                            TimeUnit.MILLISECONDS
-                                .toSeconds(10_000 - millisUntilFinished)
-                                .toString()
-                                .padStart(2, '0')
+                        TimeUnit.MILLISECONDS
+                            .toSeconds(10_000 - millisUntilFinished)
+                            .toString()
+                            .padStart(2, '0')
 
                         }s"
                         val percentageCompleted = 100 - millisUntilFinished / (timerTime / 100)
@@ -154,18 +167,18 @@ fun MyApp() {
                         progress = 1f
                         buttonLabel = "Reset"
                         timeElapsed = "00h 00m ${
-                            TimeUnit.MILLISECONDS
-                                .toSeconds(timerTime)
-                                .toString()
-                                .padStart(2, '0')
+                        TimeUnit.MILLISECONDS
+                            .toSeconds(timerTime)
+                            .toString()
+                            .padStart(2, '0')
 
                         }s"
                     }
                 }
                 timer.start()
-            })
+            }
+        )
     }
-
 }
 
 @Composable
@@ -183,7 +196,6 @@ private fun StartButton(text: String, onClick: () -> Unit) {
     }
 }
 
-
 @Preview("Preview", widthDp = 660, heightDp = 1240)
 @Composable
 fun LightPreview() {
@@ -191,4 +203,3 @@ fun LightPreview() {
         MyApp()
     }
 }
-
